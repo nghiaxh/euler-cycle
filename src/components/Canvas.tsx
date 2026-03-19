@@ -247,7 +247,7 @@ const Canvas: React.FC = () => {
               {/* Đường dày trong suốt để bắt sự kiện */}
               <line ref={setEdgeThickRef(edge.id)} x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke="transparent" strokeWidth="20" data-edge-id={edge.id} className="cursor-pointer" />
               {/* Đường mỏng nhìn thấy */}
-              <line ref={setEdgeThinRef(edge.id)} x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke="#555" strokeWidth="3" pointerEvents="none" />
+              <line ref={setEdgeThinRef(edge.id)} x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke="#555" strokeWidth="2" pointerEvents="none" />
             </g>
           );
         })}
@@ -264,7 +264,7 @@ const Canvas: React.FC = () => {
           return (
             <g key={node.id} ref={setNodeRef(node.id)} transform={`translate(${node.x}, ${node.y})`} data-node-id={node.id}>
               <circle r="18" fill={isActive ? "#eff6ff" : "white"} stroke={isActive ? "#3b82f6" : "#334155"} strokeWidth="2" className="cursor-grab active:cursor-grabbing hover:fill-slate-50 transition-colors" />
-              <text dy=".33em" textAnchor="middle" className="select-none pointer-events-none font-bold text-xs fill-slate-700">
+              <text dy=".33em" textAnchor="middle" className="select-none pointer-events-none font-bold fill-slate-700">
                 {node.label}
               </text>
             </g>
