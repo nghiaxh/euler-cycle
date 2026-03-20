@@ -1,4 +1,3 @@
-// App.tsx
 import React from "react";
 import TitleBar from "./components/Titlebar";
 import Toolbar from "./components/Toolbar";

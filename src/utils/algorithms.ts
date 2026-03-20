@@ -1,5 +1,4 @@
-// algorithms.ts
-import { Node, Edge } from "../types";
+import { Node, Edge } from "../types.ts";
 
 // Đếm số thành phần liên thông
 export function countConnectedComponents(nodes: Node[], edges: Edge[]): number {
