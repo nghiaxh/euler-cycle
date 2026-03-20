@@ -100,26 +100,26 @@ const Toolbar: React.FC = () => {
       {/* Toolbar cố định dưới cùng */}
       <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg px-4 py-2 flex items-center gap-2 z-50">
         <button onClick={handleCountConnectivity} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Kiểm tra liên thông">
-          <CircleCheckBig size={20} />
+          <CircleCheckBig />
         </button>
         <button onClick={handleFindEuler} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Tìm chu trình Euler">
-          <Search size={20} />
+          <Search />
         </button>
         <button onClick={loadMockup} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Tải đồ thị mẫu">
-          <ChartNetwork size={20} />
+          <ChartNetwork />
         </button>
         <button onClick={exportJSON} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xuất JSON">
-          <Download size={20} />
+          <Download />
         </button>
         <label className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Nhập JSON">
-          <Upload size={20} />
+          <Upload />
           <input type="file" className="hidden" accept=".json" onChange={importJSON} ref={fileInputRef} />
         </label>
         <button onClick={handleClearGraph} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xóa đồ thị">
-          <Trash size={20} />
+          <Trash />
         </button>
         <button className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Trợ giúp">
-          <HelpCircleIcon size={20} />
+          <HelpCircleIcon />
         </button>
       </div>
     </>
