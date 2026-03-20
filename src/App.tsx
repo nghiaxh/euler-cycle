@@ -1,6 +1,6 @@
 // App.tsx
 import React from "react";
-import TitleBar from "./components/TitleBar";
+import TitleBar from "./components/Titlebar";
 import Toolbar from "./components/Toolbar";
 import Canvas from "./components/Canvas";
 
