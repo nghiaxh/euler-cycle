@@ -235,7 +235,7 @@ const Canvas: React.FC = () => {
   };
 
   return (
-    <div className="relative w-full h-full bg-white border border-gray-200 rounded-xl shadow-inner overflow-hidden">
+    <div className="relative w-full h-full bg-white border border-gray-200 shadow-inner overflow-hidden">
       <svg ref={svgRef} className="w-full h-full cursor-crosshair" onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp} onContextMenu={handleContextMenu}>
         {/* Các cạnh */}
         {edges.map((edge) => {
