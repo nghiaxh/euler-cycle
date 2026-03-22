@@ -95,7 +95,7 @@ const Toolbar: React.FC = () => {
   return (
     <>
       {/* Toaster đặt ở top-center */}
-      <Toaster position="top-center" reverseOrder={false} />
+      <Toaster position="top-center" reverseOrder={false} containerStyle={{ top: 50 }} />
 
       {/* Toolbar cố định dưới cùng */}
       <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg px-4 py-2 flex items-center gap-2 z-50">
