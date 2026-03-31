@@ -26,7 +26,8 @@ const TitleBar: React.FC = () => {
     <div data-tauri-drag-region className="h-8 w-full flex items-center justify-between border-gray-100 select-none shrink-0 shadow-xl">
       {/* Logo + App name */}
       <div data-tauri-drag-region className="flex items-center gap-1.5 mx-2 pointer-events-none">
-        <ChartNetwork size={24} className="text-slate-600" />
+        <ChartNetwork size={19} className="text-slate-600" />
+        <span className="text-slate-600 text-sm truncate">Trực quan hóa bài toán tìm chu trình Euler</span>
       </div>
 
       {/* Window controls */}
