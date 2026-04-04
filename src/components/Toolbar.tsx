@@ -1,13 +1,15 @@
 // Toolbar.tsx
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import { useStore } from "../store";
 import { countConnectedComponents, findEulerCircuit } from "../utils/algorithms";
 import toast, { Toaster } from "react-hot-toast";
 import { CircleCheckBig, Search, ChartNetwork, Upload, Download, Trash, HelpCircleIcon } from "lucide-react";
+import Modal from "./Modal";
 
 const Toolbar: React.FC = () => {
   const { nodes, edges, clearGraph, setGraph } = useStore();
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleCountConnectivity = () => {
     const components = countConnectedComponents(nodes, edges);
@@ -97,8 +99,10 @@ const Toolbar: React.FC = () => {
       {/* Toaster đặt ở top-center */}
       <Toaster position="top-center" reverseOrder={false} containerStyle={{ top: 50 }} />
 
+      <Modal isVisible={isOpen} onClose={() => setIsOpen(false)}></Modal>
+
       {/* Toolbar cố định dưới cùng */}
-      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg px-4 py-2 flex items-center gap-2 z-50">
+      <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg px-4 py-2 flex items-center gap-2 z-40">
         <button onClick={handleCountConnectivity} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Kiểm tra liên thông">
           <CircleCheckBig />
         </button>
@@ -108,17 +112,17 @@ const Toolbar: React.FC = () => {
         <button onClick={loadMockup} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Tải đồ thị mẫu">
           <ChartNetwork />
         </button>
-        <button onClick={exportJSON} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xuất JSON">
+        <button onClick={exportJSON} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xuất đồ thị">
           <Download />
         </button>
-        <label className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Nhập JSON">
+        <label className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Nhập đồ thị">
           <Upload />
           <input type="file" className="hidden" accept=".json" onChange={importJSON} ref={fileInputRef} />
         </label>
         <button onClick={handleClearGraph} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xóa đồ thị">
           <Trash />
         </button>
-        <button className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Trợ giúp">
+        <button onClick={() => setIsOpen(true)} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Trợ giúp">
           <HelpCircleIcon />
         </button>
       </div>
