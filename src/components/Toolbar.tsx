@@ -103,27 +103,40 @@ const Toolbar: React.FC = () => {
 
       {/* Toolbar cố định dưới cùng */}
       <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg px-4 py-2 flex items-center gap-2 z-40">
-        <button onClick={handleCountConnectivity} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Kiểm tra liên thông">
-          <CircleCheckBig />
+        <button onClick={handleCountConnectivity} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Kiểm tra liên thông">
+          <CircleCheckBig className="w-5 h-5" />
+          <span className="text-sm font-medium hidden sm:inline truncate">Liên thông</span>
         </button>
-        <button onClick={handleFindEuler} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Tìm chu trình Euler">
-          <Search />
+
+        <button onClick={handleFindEuler} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Tìm chu trình Euler">
+          <Search className="w-5 h-5" />
+          <span className="text-sm font-medium hidden sm:inline truncate">Tìm</span>
         </button>
-        <button onClick={loadMockup} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Tải đồ thị mẫu">
-          <ChartNetwork />
+
+        <button onClick={loadMockup} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Tải đồ thị mẫu">
+          <ChartNetwork className="w-5 h-5" />
+          <span className="text-sm font-medium hidden sm:inline truncate">Mẫu</span>
         </button>
-        <button onClick={exportJSON} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xuất đồ thị">
-          <Download />
+
+        <button onClick={exportJSON} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xuất đồ thị">
+          <Download className="w-5 h-5" />
+          <span className="text-sm font-medium hidden sm:inline truncate">Lưu</span>
         </button>
-        <label className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Nhập đồ thị">
-          <Upload />
+
+        <label className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Nhập đồ thị">
+          <Upload className="w-5 h-5" />
+          <span className="text-sm font-medium hidden sm:inline truncate">Nhập</span>
           <input type="file" className="hidden" accept=".json" onChange={importJSON} ref={fileInputRef} />
         </label>
-        <button onClick={handleClearGraph} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xóa đồ thị">
-          <Trash />
+
+        <button onClick={handleClearGraph} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xóa đồ thị">
+          <Trash className="w-5 h-5" />
+          <span className="text-sm font-medium hidden sm:inline truncate">Xóa</span>
         </button>
-        <button onClick={() => setIsOpen(true)} className="p-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Trợ giúp">
-          <HelpCircleIcon />
+
+        <button onClick={() => setIsOpen(true)} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Trợ giúp">
+          <HelpCircleIcon className="w-5 h-5" />
+          <span className="text-sm font-medium hidden sm:inline truncate">Trợ giúp</span>
         </button>
       </div>
     </>
