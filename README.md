@@ -1,11 +1,11 @@
 # Euler cycle visualization
 
-Working in progress project...
+Desktop app graph theory to visualize euler cycle.
 
 ## Requirements
 
 - Nodejs
-- Rustup, Visual Studio Build Tools (or GNU)
+- Rustup, Visual Studio Build Tools
 
 ## Development
 
