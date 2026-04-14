@@ -15,7 +15,7 @@ const Toolbar: React.FC = () => {
     if (components === 0) {
       toast.error("Đồ thị rỗng");
     } else if (components === 1) {
-      toast.success("Đồ thị liên thông");
+      toast.success(`Đồ thị liên thông, số miền liên thông: ${components}`);
     } else {
       toast.error(`Đồ thị không liên thông (${components} thành phần)`);
     }
@@ -24,9 +24,9 @@ const Toolbar: React.FC = () => {
   const handleFindEuler = () => {
     const circuit = findEulerCircuit(nodes, edges);
     if (circuit) {
-      toast.success(`Chu trình Euler\n${circuit.join(" ➔ ")}`, { duration: 4000 });
+      toast.success(`Tìm thấy chu trình Euler\n${circuit.join(" ➔ ")}`, { duration: 4000 });
     } else {
-      toast.error("Không có chu trình Euler");
+      toast.error("Không tìm chu trình Euler");
     }
   };
 
