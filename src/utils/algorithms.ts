@@ -8,7 +8,7 @@ import { Node, Edge } from "../types.ts";
  * @returns Số lượng thành phần liên thông.
  */
 export function countConnectedComponents(nodes: Node[], edges: Edge[]): number {
-  // Nếu đồ thị không có đỉnh nào → 0 thành phần
+  // Nếu đồ thị không có đỉnh nào -> 0 thành phần
   if (nodes.length === 0) return 0;
 
   // 1. Xây dựng danh sách kề: id đỉnh -> mảng các id đỉnh kề

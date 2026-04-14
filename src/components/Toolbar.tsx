@@ -64,7 +64,7 @@ const Toolbar: React.FC = () => {
     link.download = "graph.json";
     link.click();
     URL.revokeObjectURL(url);
-    toast.success("Đã xuất JSON");
+    toast.success("Đã lưu đồ thị");
   };
 
   const importJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
