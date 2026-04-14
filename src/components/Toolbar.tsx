@@ -1,4 +1,3 @@
-// Toolbar.tsx
 import React, { useState, useRef } from "react";
 import { useStore } from "../store";
 import { countConnectedComponents, findEulerCircuit } from "../utils/algorithms";
@@ -105,7 +104,7 @@ const Toolbar: React.FC = () => {
       <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg px-4 py-2 flex items-center gap-2 z-40">
         <button onClick={handleCountConnectivity} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Kiểm tra liên thông">
           <CircleCheckBig className="w-5 h-5" />
-          <span className="text-sm font-medium hidden sm:inline truncate">Liên thông</span>
+          <span className="text-sm font-medium hidden sm:inline truncate">Kiểm tra</span>
         </button>
 
         <button onClick={handleFindEuler} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Tìm chu trình Euler">
@@ -118,7 +117,7 @@ const Toolbar: React.FC = () => {
           <span className="text-sm font-medium hidden sm:inline truncate">Mẫu</span>
         </button>
 
-        <button onClick={exportJSON} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Xuất đồ thị">
+        <button onClick={exportJSON} className="flex items-center gap-2 px-3 py-2 hover:bg-gray-100 rounded-full transition-colors cursor-pointer" title="Lưu đồ thị">
           <Download className="w-5 h-5" />
           <span className="text-sm font-medium hidden sm:inline truncate">Lưu</span>
         </button>
